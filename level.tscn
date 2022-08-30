@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://floor_tileset.png" type="Texture" id=1]
+[ext_resource path="res://cursor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://level.gd" type="Script" id=3]
+[ext_resource path="res://player_portrait.png" type="Texture" id=4]
+[ext_resource path="res://blue_marker.tscn" type="PackedScene" id=5]
+[ext_resource path="res://red_marker.tscn" type="PackedScene" id=6]
+
+[sub_resource type="TileSet" id=1]
+0/name = "floor_tileset.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 256 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 6, 2, 0, 6, 4, 0, 6, 6, 0, 6, 8, 0, 262145, 131072, 0, 196613, 131074, 0, 6, 131076, 0, 6, 131078, 0, 6, 131080, 0, 262145, 262144, 0, 6, 262146, 0, 6, 262148, 0, 196613, 262150, 0, 6, 262152, 0, 262145, 393216, 0, 6, 393218, 0, 6, 393220, 0, 6, 393222, 0, 6, 393224, 0, 262145, 524288, 0, 262145, 524290, 0, 262145, 524292, 0, 262145, 524294, 0, 262145, 524296, 0, 262145 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 144, 144 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Cursor" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+
+[node name="BlueMarker" parent="." instance=ExtResource( 5 )]
+position = Vector2( 256, 64 )
+
+[node name="RedMarker" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, 0 )
+
+[node name="RedMarker3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 128, 0 )
+
+[node name="RedMarker4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 192, 0 )
+
+[node name="RedMarker5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, 128 )
+
+[node name="RedMarker6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, 128 )
+
+[node name="RedMarker7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 128, 128 )
+
+[node name="RedMarker8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 192, 128 )
